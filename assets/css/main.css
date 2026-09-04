@@ -3449,3 +3449,131 @@ input[type="button"]:disabled,
     padding: 0;
   }
 }
+
+/* Memastikan media gambar dan embed tidak keluar border */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mengamankan tampilan tabel agar bisa di-scroll di HP */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimasi layout untuk tablet & smartphone */
+@media screen and (max-width: 980px) {
+  #header {
+    z-index: 10002;
+  }
+
+  #wrapper {
+    width: 100% !important;
+  }
+
+  .container {
+    max-width: 90% !important;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Merapikan tombol dan form di layar HP kecil */
+  ul.actions {
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  ul.actions li {
+    padding: 0.5em 0 0 0 !important;
+    width: 100%;
+  }
+
+  ul.actions li .button,
+  ul.actions li input[type="submit"] {
+    width: 100% !important;
+  }
+}
+
+/* 1. Tampilan Box / Container Utama */
+.box {
+  border-radius: 6px;
+  border: solid 1px #e4e4e4;
+  margin-bottom: 1.5em;
+  padding: 1.25em;
+}
+
+/* 2. Optimasi Grid SWOT & Feature Icons agar Fleksibel */
+ul.feature-icons li {
+  padding: 0.25em 0 0 3em !important;
+  margin: 0 0 1.25em 0 !important;
+}
+
+ul.feature-icons li::before {
+  width: 2em !important;
+  height: 2em !important;
+  line-height: 2em !important;
+  font-size: 0.85em !important;
+}
+
+/* 3. Penyesuaian khusus Layar Vertikal / Mobile (Tablet & HP) */
+@media screen and (max-width: 736px) {
+  /* Membuat kolom SWOT (S, W, O, T) otomatis menjadi 1 kolom vertikal */
+  .row {
+    margin-left: 0 !important;
+  }
+
+  .row > * {
+    padding-left: 0 !important;
+    padding-top: 1em !important;
+    width: 100% !important; /* Box SWOT otomatis menyesuaikan lebar layar */
+  }
+
+  .row.gtr-uniform {
+    margin-top: -1em !important;
+  }
+
+  /* Mengatur padatan isi box SWOT agar tidak terlalu makan tempat */
+  .box {
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+  }
+
+  /* Menyesuaikan judul di dalam box SWOT */
+  .box h3,
+  .box h4 {
+    font-size: 1.1em !important;
+    margin-bottom: 0.4em !important;
+  }
+
+  .box p {
+    font-size: 0.95em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  /* Jika SWOT pakai daftar poin (ul/ol) di dalam box */
+  .box ul,
+  .box ol {
+    padding-left: 1.2em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .box li {
+    font-size: 0.9em !important;
+    padding-left: 0.2em !important;
+  }
+}
+
+/* 4. Layar HP Vertikal Kecil / Sempit */
+@media screen and (max-width: 480px) {
+  .box {
+    padding: 0.85em !important;
+  }
+
+  ul.feature-icons li {
+    width: 100% !important; /* Menumpuk ikon SWOT/fitur secara vertikal */
+  }
+}
